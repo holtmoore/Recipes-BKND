@@ -25,7 +25,7 @@ router.get("/user/:userid", async (req, res) => {
     }
     });
 
-    router.put("/user", async (req, res) => {
+    router.put("/user/userid", async (req, res) => {
         const { userID, recipeID } = req.body;
         const user = await UserModel.findById(userID);
         const savedRecipes = user.savedRecipes;
