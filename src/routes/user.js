@@ -18,10 +18,11 @@ router.post("/register", async (req, res) => {
   res.json({ message: "User registered successfully" });
 });
 
-router.get("/user", async (req, res) => {
+router.get("/user/:userid", async (req, res) => {
     const { userID } = req.query;
-    const user = await UserModel.findById(userID);
-    res.json(user);
+    if (!userID || !mongoose.Types.ObjectId.isValid(userID)) {
+      return res.status(400).json({ message: "Invalid user ID" });
+    }
     });
 
     router.put("/user", async (req, res) => {

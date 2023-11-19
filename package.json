@@ -6,6 +6,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.1"
   },
+  "engines": {
+    "node": ">=16.20.1"
+  },
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
@@ -13,7 +16,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_OPTIONS='--experimental-specifier-resolution=node' nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "author": "",
   "license": "ISC",
