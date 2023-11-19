@@ -97,24 +97,23 @@ router.get("/savedRecipes/:userId", async (req, res) => {
   }
 });
 
-router.put("/:recipeId", verifyToken, async (req, res) => {
+router.put("/:recipeId", async (req, res) => {
     try {
       const updatedRecipe = await RecipesModel.findByIdAndUpdate(req.params.recipeId, req.body, { new: true });
       res.status(200).json(updatedRecipe);
     } catch (err) {
       res.status(500).json(err);
     }
-  });
+});
   
-  // Delete a recipe by ID
-  router.delete("/:recipeId", verifyToken, async (req, res) => {
+  router.delete("/:recipeId", async (req, res) => {
     try {
       await RecipesModel.findByIdAndRemove(req.params.recipeId);
       res.status(200).json({ message: "Recipe deleted successfully" });
     } catch (err) {
       res.status(500).json(err);
     }
-  });
+});
 
 
 export { router as recipesRouter };

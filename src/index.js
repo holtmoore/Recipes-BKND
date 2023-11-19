@@ -13,8 +13,9 @@ app.use(cors());
 app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter);
 
+
 mongoose.connect(
-  "mongodb+srv://doueven1996:h1kVUfRcnYY4b5ga@cluster0.b0gmr3u.mongodb.net/",
+  "mongodb+srv://doueven1996:cjl58b2Cd7JJqbDG@cluster0.b0gmr3u.mongodb.net/",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
